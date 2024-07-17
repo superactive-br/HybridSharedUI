@@ -4,10 +4,12 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
 	</PropertyGroup>
 
+
 	<ItemGroup>
-		<ProjectReference Include="..\MyApp.Shared\MyApp.Shared.csproj" />
+		<ProjectReference Include="..\MyApplication.Client\MyApplication.Client.csproj" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.*" />
 	</ItemGroup>
 

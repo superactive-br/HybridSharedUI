@@ -1,20 +1,16 @@
 using MudBlazor.Services;
-using MyApp.Shared;
-using MyApp.Shared.Interfaces;
-using MyApp.Web.Components;
-using MyApp.Web.Services;
+using MyApplication.Client.Pages;
+using MyApplication.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add device specific services used by Razor Class Library (MyApp.Shared)
-builder.Services.AddScoped<IFormFactor, FormFactor>();
+// Add MudBlazor services
+builder.Services.AddMudServices();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
-
-builder.Services.AddMudServices();
 
 var app = builder.Build();
 
@@ -38,6 +34,6 @@ app.UseAntiforgery();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(MyApp.Shared._Imports).Assembly); 
+    .AddAdditionalAssemblies(typeof(MyApplication.Client._Imports).Assembly);
 
 app.Run();
