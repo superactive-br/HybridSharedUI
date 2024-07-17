@@ -1,3 +1,4 @@
+using MudBlazor.Services;
 using MyApp.Shared;
 using MyApp.Shared.Interfaces;
 using MyApp.Web.Components;
@@ -11,6 +12,8 @@ builder.Services.AddRazorComponents()
 
 // Add device specific services used by Razor Class Library (MyApp.Shared)
 builder.Services.AddScoped<IFormFactor, FormFactor>();
+
+builder.Services.AddMudServices();
 
 var app = builder.Build();
 

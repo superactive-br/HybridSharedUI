@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using MudBlazor.Services;
 using MyApp.MAUI.Services;
 using MyApp.Shared;
 using MyApp.Shared.Interfaces;
@@ -29,6 +30,8 @@ namespace MyApp.MAUI
 
             // Add device specific services used by Razor Class Library (MyApp.Shared)
             builder.Services.AddSingleton<IFormFactor, FormFactor>();
+
+            builder.Services.AddMudServices();
 
             return builder.Build();
         }
